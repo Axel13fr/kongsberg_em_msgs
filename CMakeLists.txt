@@ -48,9 +48,11 @@ find_package(catkin REQUIRED COMPONENTS
    DIRECTORY msg
    FILES
    KongsbergStatus.msg
+   KongsbergSetting.msg
    KongsbergKSSIS.msg
    KongsbergKMAllRecord.msg
    KongsbergMRZ.msg
+
  )
 
 ## Generate services in the 'srv' folder
@@ -60,6 +62,7 @@ find_package(catkin REQUIRED COMPONENTS
    PingCmd.srv
    PowerCmd.srv
    SettingsCmd.srv
+   MultiSettingsCmd.srv
    ValuesCmd.srv
    BistCmd.srv
    LoadXmlCmd.srv
