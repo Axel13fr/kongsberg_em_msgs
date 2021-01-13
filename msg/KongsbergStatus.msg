@@ -64,6 +64,10 @@ string rt_detector_mode #
 string rt_fm_disable #
 string rt_log_watercol
 string rt_extra_detect #
+string rt_port_angle
+string rt_stbd_angle
+string rt_port_coverage
+string rt_stbd_coverage
 
 # txmit params
 string rt_pitch_stab #
