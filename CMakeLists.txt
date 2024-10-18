@@ -52,7 +52,9 @@ find_package(catkin REQUIRED COMPONENTS
    KongsbergKSSIS.msg
    KongsbergKMAllRecord.msg
    KongsbergMRZ.msg
-
+   KongsbergMRZFull.msg
+   KongsbergMRZsounding.msg
+   KongsbergMRZtxSectorInfo.msg
  )
 
 ## Generate services in the 'srv' folder
