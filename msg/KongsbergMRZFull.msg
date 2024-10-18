@@ -23,6 +23,7 @@
 #   uint32_t time_sec;
 #   uint32_t time_nanosec;
 # };
+# header
 
 std_msgs/Header header
 
@@ -36,6 +37,7 @@ uint16 echoSounderID
 #   uint16_t numOfDgms;
 #   uint16_t dgmNum;
 # };
+# partition
 
 uint16 numOfDgms
 uint16 dgmNum
@@ -53,7 +55,7 @@ uint16 dgmNum
 #   uint8_t numRxTransducers;
 #   uint8_t algorithmType;
 # };
-
+# cmnPart
 
 uint16 pingCnt
 uint8  rxFansPerPing
@@ -117,7 +119,7 @@ uint8  algorithmType
 #   double longitude_deg;
 #   float ellipsoidHeightReRefPoint_m;
 # };
-
+# pingInfo
 
 float32 pingRate_Hz
 uint8  beamSpacing
@@ -182,7 +184,7 @@ KongsbergMRZtxSectorInfo[] sectorInfo
 #   uint16_t numExtraDetectionClasses;
 #   uint16_t numBytesPerClass;
 # };
-
+# rxInfo
 
 uint16 numBytesRxInfo
 uint16 numSoundingsMaxMain
@@ -203,10 +205,14 @@ uint16 numBytesPerClass
 #   int8_t padding;
 #   uint8_t alarmFlag;
 # };
+# extraDetClassInfo[MAX_EXTRA_DET_CLASSES];
 
-uint16 numExtraDetInClass
-uint8 alarmFlag
 
+# uint16 numExtraDetInClass
+# uint8 alarmFlag
+
+#   struct EMdgmMRZ_sounding_def sounding[MAX_NUM_BEAMS + MAX_EXTRA_DET];
 KongsbergMRZsounding[] soundings
 
+#   int16_t SIsample_desidB[MAX_SIDESCAN_SAMP];
 int16[] SIsample_desidB
