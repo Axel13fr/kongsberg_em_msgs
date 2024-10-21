@@ -44,16 +44,36 @@
 
 uint16 soundingIndex
 uint8 txSectorNumb
+
+# 0 = normal detection
+# 1 = extra detection
+# 2 = rejected detection In case 2, the estimated range has been used to fill in amplitude samples in the seabed image datagram.
+uint8 DETECTION_TYPE_NORMAL = 0
+uint8 DETECTION_TYPE_EXTRA_DETECTION = 1
+uint8 DETECTION_TYPE_REJECTED = 2
 uint8 detectionType
+
+# 0 = no valid detection
+# 1 = amplitude detection
+# 2 = phase detection
+# 3-15 for future use.
+uint8 DETECTION_METHOD_NO_VALID = 0
+uint8 DETECTION_METHOD_AMPLITUDE = 1
+uint8 DETECTION_METHOD_PHASE = 2
+
 uint8 detectionMethod
+
 uint8 rejectionInfo1
 uint8 rejectionInfo2
 uint8 postProcessingInfo
 uint8 detectionClass
 uint8 detectionConfidenceLevel
-
 float32 rangeFactor
+
+# Estimated standard deviation as % of the detected depth. Quality Factor (QF) is calculated from IFREMER Quality Factor (IFQ):
+# QF=Est(dz)/z=100*10^-IQF
 float32 qualityFactor
+
 float32 detectionUncertaintyVer_m
 float32 detectionUncertaintyHor_m
 float32 detectionWindowLength_sec
